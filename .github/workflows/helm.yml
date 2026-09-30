@@ -18,12 +18,12 @@ jobs:
       - uses: azure/setup-helm@v4
 
       - name: Lint chart
-        run: helm lint charts/banksystem
+        run: helm lints banksystem
 
       - name: Package chart
         run: |
           mkdir -p dist
-          helm package charts/banksystem --destination dist
+          helm package banksystem --destination dist
 
       - uses: actions/upload-artifact@v4
         with:
@@ -45,6 +45,6 @@ jobs:
 
       - uses: helm/chart-releaser-action@v1.6.0
         with:
-          charts_dir: charts
+          charts_dir: .
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}

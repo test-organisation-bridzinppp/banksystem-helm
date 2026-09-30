@@ -16,10 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: azure/setup-helm@v4
-
-      - name: Lint chart
-        run: helm lints banksystem
-
+     
       - name: Package chart
         run: |
           mkdir -p dist

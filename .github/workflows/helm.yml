@@ -74,17 +74,36 @@ jobs:
         shell: bash
         run: |
           index_url="https://test-organisation-bridzinppp.github.io/banksystem-helm/index.yaml"
+          dependencies=$(ruby -ryaml -e '
+            Array(YAML.load_file("charts/banksystem/Chart.yaml")["dependencies"]).each do |dependency|
+              name = dependency.fetch("name")
+              version = dependency.fetch("version")
+              puts "#{name}-#{version}/#{name}-#{version}.tgz"
+            end
+          ')
+
+          if [[ -z "$dependencies" ]]; then
+            echo "The chart has no dependencies to wait for."
+            exit 0
+          fi
+
           for attempt in {1..30}; do
             index=$(curl --fail --silent "$index_url?run=${GITHUB_RUN_ID}-${attempt}" || true)
-            if grep -Fq 'rabbitmq-0.0.2/rabbitmq-0.0.2.tgz' <<< "$index" && \
-              grep -Fq 'redis-0.0.2/redis-0.0.2.tgz' <<< "$index"; then
+            missing=()
+            while IFS= read -r dependency; do
+              if ! grep -Fq "$dependency" <<< "$index"; then
+                missing+=("$dependency")
+              fi
+            done <<< "$dependencies"
+
+            if (( ${#missing[@]} == 0 )); then
               echo "Dependency charts are available from GitHub Pages."
               exit 0
             fi
-            echo "Waiting for GitHub Pages to publish dependency charts (attempt $attempt/30)."
+            echo "Waiting for GitHub Pages to publish dependencies (attempt $attempt/30): ${missing[*]}"
             sleep 10
           done
-          echo "Timed out waiting for rabbitmq and redis charts in the GitHub Pages index." >&2
+          echo "Timed out waiting for dependency charts in the GitHub Pages index." >&2
           exit 1
 
       - uses: helm/chart-releaser-action@v1.6.0

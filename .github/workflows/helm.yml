@@ -69,3 +69,10 @@ jobs:
           pages_branch: gh-pages
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: helm/chart-releaser-action@v1.6.0
+        with:
+          charts_dir: charts/banksystem/charts
+          pages_branch: gh-pages
+        env:
+          CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,4 @@
-apiVewrsion: v1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: banksystem-api-pdb

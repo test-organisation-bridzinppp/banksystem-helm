@@ -17,7 +17,7 @@ spec:
       serviceAccountName: banksystem-api-sa
       containers:
       - name: banksystem-api
-        image: {{ .Values.banksystem-api.image.repository }}:{{ .Values.banksystem-api.image.tag }}
+        image: {{ .Values.banksystemapi.image.repository }}:{{ .Values.banksystemapi.image.tag }}
         resources:
           requests:
             memory: "64Mi"

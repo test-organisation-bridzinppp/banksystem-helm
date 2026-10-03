@@ -3,6 +3,23 @@ entries:
   banksystem:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2026-10-03T14:26:57.373348816Z"
+    dependencies:
+    - name: rabbitmq
+      repository: https://test-organisation-bridzinppp.github.io/banksystem-helm/
+      version: 0.0.2
+    - name: redis
+      repository: https://test-organisation-bridzinppp.github.io/banksystem-helm/
+      version: 0.0.2
+    description: A Helm chart for Kubernetes
+    digest: eff8b7631c3a036bd54f2cbdc116e25c8bc2bee4248b0ab4ac3b117c158a386c
+    name: banksystem
+    type: application
+    urls:
+    - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/banksystem-0.2.4/banksystem-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2026-10-03T14:19:13.664467568Z"
     dependencies:
     - name: rabbitmq
@@ -107,4 +124,4 @@ entries:
     urls:
     - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/redis-0.0.2/redis-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-03T14:19:13.664491202Z"
+generated: "2026-10-03T14:26:57.373374764Z"

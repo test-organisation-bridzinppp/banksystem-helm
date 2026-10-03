@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: banksystem-api-config
+  namespace: banksystem
+data:
+  ConnectionStrings__DefaultConnection: "Server=banksystem-api-externalsvc,1433;Database=BankSystem;Integrated Security=True;TrustServerCertificate=True;"

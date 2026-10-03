@@ -18,6 +18,9 @@ spec:
       containers:
       - name: banksystem-api
         image: {{ .Values.banksystemapi.image.repository }}:{{ .Values.banksystemapi.image.tag }}
+        envFrom:
+        - configMapRef:
+            name: banksystem-api-config
         resources:
           requests:
             memory: "64Mi"

@@ -1,0 +1,11 @@
+apiVewrsion: v1
+kind: PodDisruptionBudget
+metadata:
+  name: banksystem-api-pdb
+  labels:
+    app: banksystem-api
+spec:
+  minAvailable: 1  
+  selector:
+    matchLabels:
+      app: banksystem-api

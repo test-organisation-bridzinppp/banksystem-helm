@@ -1,0 +1,7 @@
+apiVerison: v1
+kind: ServiceAccount
+metadata:
+  name: banksystem-api-sa
+  labels:
+    app: banksystem-api
+automountServiceAccountToken: true

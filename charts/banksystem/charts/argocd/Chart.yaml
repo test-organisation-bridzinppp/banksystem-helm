@@ -1,0 +1,11 @@
+apiVersion: v2
+name: argocd
+description: Własna instalacja ArgoCD przez HTTP (bez TLS)
+type: application
+version: 0.0.1
+appVersion: "2.14.0"
+
+dependencies:
+  - name: argo-cd
+    version: 7.8.0
+    repository: https://argoproj.github.io/argo-helm

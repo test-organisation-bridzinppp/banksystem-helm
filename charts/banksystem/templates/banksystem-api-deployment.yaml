@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banksystem-api-deployment
+  labels:
+    app: banksystem-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: banksystem-api
+  template:
+    metadata:
+      labels:
+        app: banksystem-api
+    spec:
+      serviceAccountName: banksystem-api-sa
+      containers:
+      - name: banksystem-api
+        image: bridzinppp/banksystem-api:1.0.1
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          protocol: TCP
+          containerPort: 8080          

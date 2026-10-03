@@ -1,0 +1,8 @@
+apiVersion: v2
+name: redis
+description: A Helm chart for REDIS
+
+type: application
+
+version: 0.0.1
+appVersion: "8.10.2"

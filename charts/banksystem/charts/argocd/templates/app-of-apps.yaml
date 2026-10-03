@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: banksystem-apps
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    # Before syncing, create a repository Secret in argocd with this URL,
+    # type: git, username: x-access-token, and a read-only GitHub PAT as password.
+    # Label the Secret argocd.argoproj.io/secret-type: repository.
+    repoURL: https://github.com/test-organisation-bridzinppp/banksystem-ops.git
+    targetRevision: main
+    path: applications
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

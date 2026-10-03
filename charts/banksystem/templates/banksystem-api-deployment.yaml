@@ -17,7 +17,7 @@ spec:
       serviceAccountName: banksystem-api-sa
       containers:
       - name: banksystem-api
-        image: bridzinppp/banksystem-api:1.0.1
+        image: {{ .Values.banksystem-api.image.repository }}:{{ .Values.banksystem-api.image.tag }}
         resources:
           requests:
             memory: "64Mi"

@@ -2,7 +2,7 @@ apiVersion: v2
 name: banksystem
 description: A Helm chart for Kubernetes
 type: application
-version: 0.2.6
+version: 0.2.7
 appVersion: "0.0.1"
 
 dependencies:
@@ -12,3 +12,7 @@ dependencies:
   - name: redis
     version: 0.0.2
     repository: "https://test-organisation-bridzinppp.github.io/banksystem-helm/"
+  - name: keycloak
+    version: 0.0.1
+    repository: "https://test-organisation-bridzinppp.github.io/banksystem-helm/"
+    

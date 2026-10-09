@@ -136,6 +136,16 @@ entries:
     urls:
     - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/banksystem-0.0.1/banksystem-0.0.1.tgz
     version: 0.0.1
+  keycloak:
+  - apiVersion: v2
+    created: "2026-10-09T17:27:25.794583482Z"
+    description: Keycloak with postgrees
+    digest: 5df45ed3eaa3f000a9a0527fc5f9d58e53e2cf0d415f3b9cebeeb6a115dcfa40
+    name: keycloak
+    type: application
+    urls:
+    - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/keycloak-0.0.1/keycloak-0.0.1.tgz
+    version: 0.0.1
   rabbitmq:
   - apiVersion: v2
     appVersion: 4.3.6
@@ -158,4 +168,4 @@ entries:
     urls:
     - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/redis-0.0.2/redis-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-03T15:12:35.206040383Z"
+generated: "2026-10-09T17:27:25.794606034Z"

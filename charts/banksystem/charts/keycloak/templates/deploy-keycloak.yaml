@@ -52,13 +52,13 @@ spec:
             httpGet:
               path: /health/ready
               port: 9000
-            initialDelaySeconds: 20
+            initialDelaySeconds: 60
             periodSeconds: 10
-            timeoutSeconds: 5
+            timeoutSeconds: 15
           livenessProbe:
             httpGet:
               path: /health/live
               port: 9000
-            initialDelaySeconds: 40
-            periodSeconds: 15
-            timeoutSeconds: 5
+            initialDelaySeconds: 60
+            periodSeconds: 45
+            timeoutSeconds: 30

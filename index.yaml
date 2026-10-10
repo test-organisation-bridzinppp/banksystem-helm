@@ -158,6 +158,15 @@ entries:
     version: 0.0.1
   keycloak:
   - apiVersion: v2
+    created: "2026-10-10T12:53:55.612023493Z"
+    description: Keycloak with postgrees
+    digest: 6ce425178f8c2b014244e5bcb803a9597dcab660166c397956d7093d91c3cdd0
+    name: keycloak
+    type: application
+    urls:
+    - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/keycloak-0.0.2/keycloak-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2026-10-09T17:27:25.794583482Z"
     description: Keycloak with postgrees
     digest: 5df45ed3eaa3f000a9a0527fc5f9d58e53e2cf0d415f3b9cebeeb6a115dcfa40
@@ -188,4 +197,4 @@ entries:
     urls:
     - https://github.com/test-organisation-bridzinppp/banksystem-helm/releases/download/redis-0.0.2/redis-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-09T17:28:21.865212758Z"
+generated: "2026-10-10T12:53:55.612063999Z"

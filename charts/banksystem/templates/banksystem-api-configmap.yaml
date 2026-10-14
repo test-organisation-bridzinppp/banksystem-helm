@@ -5,3 +5,5 @@ metadata:
   namespace: banksystem
 data:
   ConnectionStrings__DefaultConnection: "Server=banksystem-api-externalsvc,1433;Database=BankSystem;Integrated Security=True;TrustServerCertificate=True;"
+  Keycloak__AuthorizationUrl: "http://keycloak.keycloak.svc.cluster.local:8080/realms/first/protocol/openid-connect/auth"
+  Keycloak__TokenUrl: "http://keycloak.keycloak.svc.cluster.local:8080/realms/first/protocol/openid-connect/token"
